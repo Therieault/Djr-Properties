@@ -1,0 +1,89 @@
+body {
+  background-color: #EFEFEF;
+}
+.apply-container {
+  padding: 20px 70px;
+}
+.apply-steps-container {
+padding: 20px;
+ border: #999 solid 1px;
+ border-radius:10px;
+ margin: 15px;
+ box-shadow: 0px 0px 0px 1px #fff inset;
+}
+
+.title, .apply-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.apply-button {
+  font-size: 20px;
+}
+
+.apply-rent-calculation {
+  display: flex;
+  justify-content:flex-end;
+}
+
+.contact-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+   border: #999 solid 1px;
+   border-radius:10px;
+   margin: 15px;
+   box-shadow: 0px 0px 0px 1px #fff inset;
+}
+
+.application-container {
+  padding: 30px;
+}
+
+.application-category, .apartment-container {
+  padding: 10px;
+   border: #999 solid 1px;
+   border-radius:10px;
+   margin: 15px;
+   box-shadow: 0px 0px 0px 1px #fff inset;
+}
+
+.contact-form-container {
+  width: 100%;
+}
+.contact-form {
+  display: flex;
+  justify-content: center;
+}
+
+textarea {
+  width: 400px;
+  height: 300px;
+}
+
+.building-description {
+  padding: 5px 20px;
+   border: #999 solid 1px;
+   border-radius:10px;
+   margin: 15px;
+   box-shadow: 0px 0px 0px 1px #fff inset;
+}
+
+.image-gallery-container {
+  width: 500px;
+}
+
+.building-additionals {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+@media (max-width: 1175px) {
+  .building-additionals {
+    flex-direction: column;
+  }
+}

@@ -1,17 +1,17 @@
 {
   "development": {
-    "database": "d9m06biqljqp06",
-    "host": "ec2-23-23-130-158.compute-1.amazonaws.com",
+    "database": "djr",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "d9m06biqljqp06",
-    "host": "ec2-23-23-130-158.compute-1.amazonaws.com",
+    "database": "djr",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "d9m06biqljqp06",
-    "host": "ec2-23-23-130-158.compute-1.amazonaws.com",
+    "database": "djr",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   }
 }

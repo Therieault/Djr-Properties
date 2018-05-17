@@ -14,16 +14,19 @@ import NavDropdown from 'react-bootstrap/lib/NavDropdown';
 import NavItem from 'react-bootstrap/lib/NavItem';
 import Nav from 'react-bootstrap/lib/Nav';
 import MenuItem from'react-bootstrap/lib/MenuItem';
-import Application from './components/application'
+import Application from './components/application';
+import ShowApartment from './components/apartment-show'
 
 
 const Navigation = () => {
     return (
       <div>
-        <Navbar>
+        <Navbar inverse collapseOnSelect>
           <NavbarHeader>
-            <NavbarBrand> DJR Properties </NavbarBrand>
+            <NavbarBrand> DJR Properties, LLC </NavbarBrand>
+            <Navbar.Toggle />
           </NavbarHeader>
+        <Navbar.Collapse>
           <Nav>
             <NavItem href='/'> Home </NavItem>
             <NavDropdown title = "Buildings" id="basic-nav-dropdown">
@@ -31,21 +34,22 @@ const Navigation = () => {
               <MenuItem href='/clintonstreet'> Clinton Street </MenuItem>
               <MenuItem href='/eaststreet'> East Street </MenuItem>
             </NavDropdown>
-            <NavItem href='/apartments'> Availability </NavItem>
+            <NavItem href='/apartments'> Apartments </NavItem>
             <NavItem href='/apply'> Apply Now </NavItem>
             <NavItem href='/contact'> Contact Us </NavItem>
-            <NavItem href='/application'> Application </NavItem>
-
           </Nav>
-        </Navbar>
+        </Navbar.Collapse>
+      </Navbar>
 
-        <Route path ='/' component={Home}/>
+        <Route exact path ='/' component={Home}/>
         <Route exact path='/austinstreet' component={AustinStreet} />
         <Route exact path='/clintonstreet' component={ClintonStreet} />
         <Route exact path='/eaststreet' component={EastStreet} />
         <Route exact path='/apartments'component={Apartments} />
         <Route exact path='/apply' component={Apply} />
+        <Route exact path='/contact' component={ContactUs} />
         <Route exact path='/application' component={Application} />
+        <Route path='/apartments/:id' component={ShowApartment} />
       </div>
     )
 }

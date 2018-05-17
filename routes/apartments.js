@@ -29,15 +29,12 @@ router.post('/', function(req,res) {
   })
 });
 
-router.put('/:id', function(req,res) {
+router.get('/:id', function(req,res) {
   Apartment.findById(req.params.id)
   .then(function(apartment) {
-    Apartment.update(getBodyParams(req))
-    .then(function(apartment) {
       res.send(apartment);
     });
-  })
-});
+  });
 
 router.delete('/:id', function(req, res) {
   Apartment.findById(req.params.id)

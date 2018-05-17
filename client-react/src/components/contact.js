@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Route, Link} from 'react-router-dom';
+import Button from 'react-bootstrap/lib/Button'
 
 class ContactUs extends Component {
   constructor(props) {
@@ -18,18 +20,31 @@ class ContactUs extends Component {
           'email': this.email.value,
           'comment':this.comment.value
         })
-      });
+      }).then(alert("Thank you for getting in touch! We will contact you shortly."));
     };
       render() {
         return (
-          <div>
-            <h1> Contact Us </h1>
-            <form onSubmit={this.handleSubmit}>
-              <strong> Name: </strong> <input type="text" name="name" placeholder="name" ref={(ref) => { this.name = ref; }}/> <br />
-              <strong> Email: </strong> <input type="email" name="email" placeholder="youremail@gmail.com" ref={(ref) => { this.email = ref; }}/> <br />
-              <strong> Note: </strong> <input type="text" name="comment" placeholder="Questions? Comments? Concerns? Leave us a note and we will get back to you ASAP." ref={(ref) => { this.comment = ref; }}/> <br />
-              <button type='submit'> Submit </button>
-            </form>
+          <div className='contact-container'>
+            <div>
+              <h1 className="title"> Contact Us </h1>
+            </div>
+            <div className="contact-information">
+            <p>DJR Properites, LLC</p>
+            <p>(860) 573-1360</p>
+            <p>jetconsult@yahoo.com</p>
+              </div>
+              <div className='contact-form-container'>
+                <div className='contact-form'>
+                  <form onSubmit={this.handleSubmit}>
+                    <p> Questions? Comments? Concerns? Leave us a note  </p>
+                    <p>and we will get back to you ASAP. </p>
+                    <strong> Name: </strong> <input type="text" name="name" placeholder="" ref={(ref) => { this.name = ref; }} required/> <br />
+                    <strong> Email: </strong> <input type="email" name="email" placeholder="" ref={(ref) => { this.email = ref; }} required/> <br />
+                    <strong> Note: </strong> <textarea className="comment-input" type="text" name="comment" ref={(ref) => { this.comment = ref; }}/> <br />
+                    <Button bsStyle='primary' type='submit'> Submit </Button>
+                </form>
+              </div>
+            </div>
           </div>
         )
       };

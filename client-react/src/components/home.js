@@ -1,8 +1,10 @@
 import React from 'react';
+require('../styles/styles.css')
 
 const Home = () => {
   return (
-    <div> Home
+    <div>
+      <h1> DJR Properties, LLC </h1>
     </div>
   )
 };

@@ -10,6 +10,9 @@ router.get('/all', function(req, res) {
   });
 });
 
+router.get('/thanks', function(req, res) {
+  console.log(redirect);
+})
 router.post('/', function(req, res) {
   const output = `<p> You have a new comment </p>
                     <h3> Details </h3>
@@ -24,7 +27,7 @@ router.post('/', function(req, res) {
         secure: false, // true for 465, false for other ports
         auth: {
             user: 'djr.properties@yahoo.com', // generated ethereal user
-            pass: 'Bristolbristol2016' // generated ethereal password
+            pass:  // generated ethereal password
         },
         tls: {
           rejectUnauthorized:false
@@ -45,7 +48,7 @@ router.post('/', function(req, res) {
         console.log('Message sent: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
-    Comment.create(req.body);
+    Comment.create(req.body)
   });
 
 module.exports = router;

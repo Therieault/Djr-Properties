@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Button from 'react-bootstrap/lib/Button'
 
 class Application extends Component {
   constructor(props) {
@@ -186,47 +187,48 @@ class Application extends Component {
           'amountAvailable':this.amountAvailable.value,
           'additionalNotes':this.additionalNotes.value
         })
-      });
+      }).then(alert("Thank you for applying to DJR Properties! We will be in touch with you regarding your application shortly."))
     };
+
       render() {
         return (
-          <div>
-            <h1> Form to Apply </h1>
+          <div className='application-container'>
+            <h1 className="title"> Form to Apply </h1>
             <form onSubmit={this.handleSubmit}>
-              <div>
-                <h3>Your Information </h3>
-                <strong> First Name: </strong> <input type="text" name="firstName" placeholder="" ref={(ref) => { this.firstName = ref; }}/>
-                <strong> Middle Name: </strong> <input type="text" name="middleName" placeholder="" ref={(ref) => { this.middleName = ref; }}/>
+              <div className='application-category'>
+                <h3 className='title'>Your Information </h3>
+                <strong> First Name: </strong> <input type="text" name="firstName" placeholder="" ref={(ref) => { this.firstName = ref; }}/> <br />
+                <strong> Middle Name: </strong> <input type="text" name="middleName" placeholder="" ref={(ref) => { this.middleName = ref; }}/> <br />
                 <strong> Last Name: </strong> <input type="text" name="lastName" placeholder="" ref={(ref) => { this.lastName = ref; }}/> <br />
-                <strong> Social Security Number: </strong> <input type="password" name="socialSecurityNumber" placeholder="" ref={(ref) => { this.socialSecurityNumber = ref; }}/>
-                <strong> Date of Birth: </strong> <input type="date" name="dateOfBirth" placeholder="DDMMYYYY" ref={(ref) => { this.dateOfBirth = ref; }}/>
+                <strong> Social Security Number: </strong> <input type="password" name="socialSecurityNumber" placeholder="" ref={(ref) => { this.socialSecurityNumber = ref; }}/> <br />
+                <strong> Date of Birth: </strong> <input type="date" name="dateOfBirth" placeholder="DDMMYYYY" ref={(ref) => { this.dateOfBirth = ref; }}/> <br />
                 <strong> Marital Status: </strong>
                   <label> <input type="radio" name="maritalStatus" value="Single" ref={(ref) => { this.maritalStatus = ref; }}/> Single </label>
                   <label> <input type="radio" name="maritalStatus" value="Married" ref={(ref) => { this.maritalStatus = ref; }}/> Married </label>
                   <label> <input type="radio" name="maritalStatus" value="Divorced" ref={(ref) => { this.maritalStatus = ref; }}/> Divorced </label><br />
-                <strong> Drivers License Number: </strong> <input type="string" name="licenseNumber" placeholder="" ref={(ref) => { this.licenseNumber = ref; }}/>
+                <strong> Drivers License Number: </strong> <input type="string" name="licenseNumber" placeholder="" ref={(ref) => { this.licenseNumber = ref; }}/> <br />
                 <strong> Drivers License State </strong> <input type="text" name="licenseState" placeholder="" ref={(ref) => { this.licenseState = ref; }}/> <br />
-                <strong> Phone Number: </strong> <input type="string" name="phoneNumber" placeholder="" ref={(ref) => { this.phoneNumber = ref; }}/>
+                <strong> Phone Number: </strong> <input type="string" name="phoneNumber" placeholder="" ref={(ref) => { this.phoneNumber = ref; }}/> <br />
                 <strong> Secondary Phone Number: </strong> <input type="string" name="secondaryPhoneNumber" placeholder="" ref={(ref) => { this.secondaryPhoneNumber = ref; }}/> <br />
                 <strong> Email: </strong> <input type="email" name="email" placeholder="" ref={(ref) => { this.email = ref; }}/> <br />
               </div>
-              <div>
-                <h3>Residence History</h3>
+              <div className='application-category'>
+                <h3 className='title'>Residence History</h3>
                 <strong> Current Home Address: </strong> <input type="text" name="currentHomeAddress" placeholder="" ref={(ref) => { this.currentHomeAddress = ref; }}/> <br />
-                <strong> Current City: </strong> <input type="text" name="currentCity" placeholder="" ref={(ref) => { this.currentCity = ref; }}/>
-                <strong> Current State: </strong> <input type="text" name="current" placeholder="" ref={(ref) => { this.currentState = ref; }}/>
-                <strong> Current Zip: </strong> <input type="number" name="currentZip" placeholder="" ref={(ref) => { this.currentZip = ref; }}/>
+                <strong> Current City: </strong> <input type="text" name="currentCity" placeholder="" ref={(ref) => { this.currentCity = ref; }}/> <br />
+                <strong> Current State: </strong> <input type="text" name="current" placeholder="" ref={(ref) => { this.currentState = ref; }}/> <br />
+                <strong> Current Zip: </strong> <input type="number" name="currentZip" placeholder="" ref={(ref) => { this.currentZip = ref; }}/> <br />
                 <strong> How long have you been at your current address? </strong> <input type="text" name="timeAtCurrentAddress" placeholder="" ref={(ref) => { this.timeAtCurrentAddress = ref; }}/> <br />
                 <strong> Current Landlord: </strong> <input type="text" name="currentLandlord" placeholder="" ref={(ref) => { this.currentLandlord = ref; }}/> <br />
                 <strong> Current Landlord Phone: </strong> <input type="text" name="currentLandlordPhone" placeholder="" ref={(ref) => { this.currentLandlordPhone = ref; }}/><br />
                 <strong> Reason for leaving current address: </strong> <input type="text" name="currentReasonForLeaving" placeholder="" ref={(ref) => { this.currentReasonForLeaving = ref; }}/><br />
-                <strong> What is your current rent? $</strong> <input type="text" name="currentRent" placeholder="" ref={(ref) => { this.currentRent = ref; }}/><br />
+                <strong> What is your current rent? $</strong> <input type="number" name="currentRent" placeholder="" ref={(ref) => { this.currentRent = ref; }}/><br />
                 <strong> Is your current rent up to date? </strong>
                   <label> <input type="radio" name="currentRentUpToDate" value="Yes, rent is up to date" ref={(ref) => { this.currentRentUpToDate = ref; }}/> Yes, my rent is up to date </label>
                   <label> <input type="radio" name="currentRentUpToDate" value="No, rent not up to date" ref={(ref) => { this.currentRentUpToDate = ref; }}/> No, my rent is not up to date </label>  < br />
                 <strong> What was your address prior to your current address? </strong> <input type="text" name="previousHomeAddress" placeholder="" ref={(ref) => { this.previousHomeAddress = ref; }}/><br />
-                <strong> City: </strong> <input type="text" name="previousCity" placeholder="" ref={(ref) => { this.previousCity = ref; }}/>
-                <strong> State: </strong> <input type="text" name="previousState" placeholder="" ref={(ref) => { this.previousState = ref; }}/>
+                <strong> City: </strong> <input type="text" name="previousCity" placeholder="" ref={(ref) => { this.previousCity = ref; }}/><br />
+                <strong> State: </strong> <input type="text" name="previousState" placeholder="" ref={(ref) => { this.previousState = ref; }}/><br />
                 <strong> Zip: </strong> <input type="number" name="previousZip" placeholder="" ref={(ref) => { this.previousZip = ref; }}/><br />
                 <strong> Previous Landlord: </strong> <input type="text" name="previousLandlord" placeholder="" ref={(ref) => { this.previousLandlord = ref; }}/><br />
                 <strong> Previous Landlord Phone Number: </strong> <input type="text" name="previousLandlordPhone" placeholder="" ref={(ref) => { this.previousLandlordPhone = ref; }}/><br />
@@ -236,10 +238,10 @@ class Application extends Component {
                       <label> <input type="radio" name="previousRentUpToDate" value="This rent was up to date" ref={(ref) => { this.previousRentUpToDate = ref; }}/> Yes, this rent was up to date </label>
                       <label> <input type="radio" name="previousRentUpToDate" value="This rent was NOT up to date" ref={(ref) => { this.previousRentUpToDate = ref; }}/> No, this rent was not up to date </label><br />
                 <strong> What was your address prior to that address? </strong> <input type="text" name="priorHomeAddress" placeholder="" ref={(ref) => { this.priorHomeAddress = ref; }}/><br />
-                <strong> City: </strong> <input type="text" name="priorCity" placeholder="" ref={(ref) => { this.priorCity = ref; }}/>
-                <strong> State: </strong> <input type="text" name="priorState" placeholder="" ref={(ref) => { this.priorState = ref; }}/>
+                <strong> City: </strong> <input type="text" name="priorCity" placeholder="" ref={(ref) => { this.priorCity = ref; }}/> <br />
+                <strong> State: </strong> <input type="text" name="priorState" placeholder="" ref={(ref) => { this.priorState = ref; }}/> <br />
                 <strong> Zip: </strong> <input type="number" name="priorZip" placeholder="" ref={(ref) => { this.priorZip = ref; }}/><br />
-                <strong> Prior Landlord: </strong> <input type="text" name="priorLandlord" placeholder="" ref={(ref) => { this.priorLandlord = ref; }}/><br />
+                <strong> Prior Landlord: </strong> <input type="text" name="priorLandlord" placeholder="" ref={(ref) => { this.priorLandlord = ref; }}/> <br />
                 <strong> Prior Landlord Phone Number: </strong> <input type="text" name="priorLandlordPhone" placeholder="" ref={(ref) => { this.priorLandlordPhone = ref; }}/><br />
                 <strong> Why did you leave that address? </strong> <input type="text" name="priorReasonForLeaving" placeholder="" ref={(ref) => { this.priorReasonForLeaving = ref; }}/><br />
                 <strong> What was your rent? $</strong> <input type="text" name="priorRent" placeholder="" ref={(ref) => { this.priorRent = ref; }}/><br />
@@ -248,9 +250,9 @@ class Application extends Component {
                     <label><input type="radio" name="priorRentUpToDate" value="This rent was NOT up to date" ref={(ref) => { this.priorRentUpToDate = ref; }}/> No, this rent was not up to date </label>
                     <br />
               </div>
-              <div>
-                <h3> Occupants </h3>
-                <strong> First Occupant Name </strong> <input type="text" name="occupantName" placeholder="name" ref={(ref) => { this.occupantName = ref; }}/><br />
+              <div className='application-category'>
+                <h3 className='title'> Occupants </h3>
+                <strong> First Occupant Name </strong> <input type="text" name="occupantName" placeholder="" ref={(ref) => { this.occupantName = ref; }}/><br />
                 <strong> Relationship: </strong> <input type="text" name="occupantRelationship" placeholder="" ref={(ref) => { this.occupantRelationship = ref; }}/><br />
                 <strong> Occupation: </strong> <input type="text" name="occupantOccupation" placeholder="" ref={(ref) => { this.occupantOccupation = ref; }}/><br />
                 <strong> Age: </strong> <input type="number" min="0" max="120" name="occupantAge" placeholder="" ref={(ref) => { this.occupantAge = ref; }}/><br />
@@ -271,8 +273,8 @@ class Application extends Component {
                 <strong> Fifth Occupant Occupation: </strong> <input type="text" name="fifthOccupantJob" placeholder="" ref={(ref) => { this.fifthOccupantJob = ref; }}/><br />
                 <strong> Fifth Occupant Age: </strong> <input type="number" name="fifthOccupantAge" placeholder="" ref={(ref) => { this.fifthOccupantAge = ref; }}/><br />
               </div>
-              <div>
-                <h3> Car Information</h3>
+              <div className='application-category'>
+                <h3 className='title'> Car Information</h3>
                 <strong> Car Year: </strong> <input type="number" name="carYear" placeholder="" ref={(ref) => { this.carYear = ref; }}/><br />
                 <strong> Car Make: </strong> <input type="text" name="carMake" placeholder="" ref={(ref) => { this.carMake = ref; }}/><br />
                 <strong> Car Model: </strong> <input type="text" name="carModel" placeholder="" ref={(ref) => { this.carModel = ref; }}/><br />
@@ -286,8 +288,8 @@ class Application extends Component {
                 <strong> Second Car License Plate: </strong> <input type="text" name="secondCarLicensePlate" placeholder="" ref={(ref) => { this.secondCarLicensePlate = ref; }}/><br />
                 <strong> Second Car State: </strong> <input type="text" name="secondCarState" placeholder="" ref={(ref) => { this.secondCarState = ref; }}/><br />
               </div>
-              <div>
-                  <h3> Employment Information</h3>
+              <div className='application-category'>
+                  <h3 className='title'> Employment Information</h3>
                 <strong> Current Employer: </strong> <input type="text" name="currentEmployer" placeholder="" ref={(ref) => { this.currentEmployer = ref; }}/><br />
                 <strong> Occupation: </strong> <input type="text" name="occupation" placeholder="" ref={(ref) => { this.occupation = ref; }}/><br />
                 <strong> Hours worked per week: </strong> <input type="number" name="hoursPerWeek" placeholder="" ref={(ref) => { this.hoursPerWeek = ref; }}/><br />
@@ -309,26 +311,26 @@ class Application extends Component {
                 <strong> Employer State: </strong> <input type="text" name="secondaryEmployerState" placeholder="" ref={(ref) => { this.secondaryEmployerState = ref; }}/><br />
                 <strong> Employer Zip: </strong> <input type="number" name="secondaryEmployerZip" placeholder="" ref={(ref) => { this.secondaryEmployerZip = ref; }}/><br />
                 <strong> Income: $</strong> <input type="number" name="income" placeholder="" ref={(ref) => { this.income = ref; }}/>
-                <strong> Per </strong> <input type="text" name="incomeUnit" placeholder="hour/week/day/month/year" ref={(ref) => { this.incomeUnit = ref; }}/><br />
+                <strong> Per </strong> <input type="text" name="incomeUnit" placeholder="hour/month/year" ref={(ref) => { this.incomeUnit = ref; }}/><br />
                 <strong> Income Source: </strong> <input type="text" name="incomeSource" placeholder="" ref={(ref) => { this.incomeSource = ref; }}/>
                 <strong> Can you provide a proof of income? </strong>
                     <label> <input type="radio" name="proofOfIncome" value="Yes, can provide proof" ref={(ref) => { this.proofOfIncome = ref; }}/> Yes </label>
                     <label> <input type="radio" name="proofOfIncome" value="No, cannot provide proof" ref={(ref) => { this.proofOfIncome = ref; }}/> No </label> <br />
                 <strong> Secondary Income: $</strong> <input type="number" name="secondaryIncome" placeholder="" ref={(ref) => { this.secondaryIncome = ref; }}/>
-                <strong> Per </strong> <input type="text" name="secondaryIncomeUnit" placeholder="hour/week/day/month/year" ref={(ref) => { this.secondaryIncomeUnit = ref; }}/><br />
+                <strong> Per </strong> <input type="text" name="secondaryIncomeUnit" placeholder="hour/month/year" ref={(ref) => { this.secondaryIncomeUnit = ref; }}/><br />
                 <strong> Secondary Income Source: </strong> <input type="text" name="secondaryIncomeSource" placeholder="" ref={(ref) => { this.secondaryIncomeSource = ref; }}/>
                 <strong> Can you provide a proof of income? </strong>
                     <label> <input type="radio" name="proofOfSecondaryIncome" value="Yes, can provide proof" ref={(ref) => { this.proofOfSecondaryIncome = ref; }}/> Yes</label>
                     <label> <input type="radio" name="proofOfSecondaryIncome" value="No, cannot provide proof" ref={(ref) => { this.proofOfSecondaryIncome = ref; }}/> No</label> <br />
                 <strong> Tertiary Income: $</strong> <input type="number" name="tertiaryIncome" placeholder="" ref={(ref) => { this.tertiaryIncome = ref; }}/>
-                <strong> Per </strong> <input type="text" name="tertiaryIncomeUnit" placeholder="hour/week/day/month/year" ref={(ref) => { this.tertiaryIncomeUnit = ref; }}/><br />
+                <strong> Per </strong> <input type="text" name="tertiaryIncomeUnit" placeholder="hour/month/year" ref={(ref) => { this.tertiaryIncomeUnit = ref; }}/><br />
                 <strong> Tertiary Income Source: </strong> <input type="text" name="tertiaryIncomeSource" placeholder="" ref={(ref) => { this.tertiaryIncomeSource = ref; }}/>
                 <strong> Can you provide a proof of income? </strong>
                     <label> <input type="radio" name="proofOfTertiaryIncome" value="Yes, can provide proof" ref={(ref) => { this.proofOfTertiaryIncome = ref; }}/> Yes </label>
                     <label> <input type="radio" name="proofOfTertiaryIncome" value="No, cannot provide proof" ref={(ref) => { this.proofOfTertiaryIncome = ref; }}/> No </label>
               </div>
-              <div>
-                <h3> Loans and Credits </h3>
+              <div className='application-category'>
+                <h3 className='title'> Loans and Credits </h3>
                 <strong> Car Loan Holder: </strong> <input type="text" name="carLoanHolder" placeholder="" ref={(ref) => { this.carLoanHolder = ref; }}/><br />
                 <strong> Car Loan Balance: $</strong> <input type="number" name="carLoanBalanceOwed" placeholder="" ref={(ref) => { this.carLoanBalanceOwed = ref; }}/><br />
                 <strong> Car Loan MonthlyPayment: $</strong> <input type="number" name="carLoanMonthlyPayment" placeholder="" ref={(ref) => { this.carLoanMonthlyPayment = ref; }}/><br />
@@ -350,8 +352,8 @@ class Application extends Component {
                 <strong> Other Credit Monthly Payment: $</strong> <input type="number" name="otherCreditMonthlyPayment" placeholder="" ref={(ref) => { this.otherCreditMonthlyPayment = ref; }}/><br />
                 <strong> Other Credit Phone: </strong> <input type="text" name="otherCreditPhone" placeholder="" ref={(ref) => { this.otherCreditPhone= ref; }}/><br />
               </div>
-              <div>
-                <h3> Emergency Contact Information </h3>
+              <div className='application-category'>
+                <h3 className='title'> Emergency Contact Information </h3>
                 <strong> Emergency Contact Name: </strong> <input type="text" name="emergencyContact" placeholder="" ref={(ref) => { this.emergencyContact = ref; }}/><br />
                 <strong> Emergency Contact Phone Number: </strong> <input type="text" name="emergencyContactPhone" placeholder="" ref={(ref) => { this.emergencyContactPhone = ref; }}/><br />
                 <strong> Emergency Contact Secondary Phone Number: </strong> <input type="text" name="emergencyContactSecondaryPhone" placeholder="" ref={(ref) => { this.emergencyContactSecondaryPhone = ref; }}/><br />
@@ -369,8 +371,8 @@ class Application extends Component {
                 <strong> Second Emergency Contact State: </strong> <input type="text" name="secondEmergencyContactState" placeholder="" ref={(ref) => { this.secondEmergencyContactState = ref; }}/><br />
                 <strong> Second Emergency Contact Zip: </strong> <input type="number" name="secondEmergencyContactZip" placeholder="" ref={(ref) => { this.secondEmergencyContactZip = ref; }}/><br />
               </div>
-              <div>
-                <h3> References</h3>
+              <div className='application-category'>
+                <h3 className='title'> References</h3>
                 <strong> Personal Reference Name: </strong> <input type="text" name="personalReference" placeholder="" ref={(ref) => { this.personalReference = ref; }}/><br />
                 <strong> Personal Reference Phone Number: </strong> <input type="text" name="personalReferencePhone" placeholder="" ref={(ref) => { this.personalReferencePhone = ref; }}/><br />
                 <strong> Personal Reference Secondary Phone Number: </strong> <input type="text" name="personalReferenceSecondaryPhone" placeholder="" ref={(ref) => { this.personalReferenceSecondaryPhone = ref; }}/><br />
@@ -388,8 +390,8 @@ class Application extends Component {
                 <strong> Second Personal Reference State: </strong> <input type="text" name="secondPersonalReferenceState" placeholder="" ref={(ref) => { this.secondPersonalReferenceState = ref; }}/><br />
                 <strong> Second Personal Reference Zip: </strong> <input type="number" name="secondPersonalReferenceZip" placeholder="" ref={(ref) => { this.secondPersonalReferenceZip = ref; }}/><br />
               </div>
-              <div>
-                  <h3> Questionnaire </h3>
+              <div className='application-category'>
+                  <h3 className='title'> Questionnaire </h3>
                   <strong> Have you ever been sued for bills? </strong>
                     <label> <input type="radio" name="sued" value="Has been sued" ref={(ref) => { this.sued = ref; }}/> Yes </label>
                     <label> <input type="radio" name="sued" value="Has not been sued" ref={(ref) => { this.sued = ref; }}/> No </label> <br />
@@ -419,7 +421,7 @@ class Application extends Component {
                     <label> <input type="radio" name="amountAvailable" value="Does not have amount available" ref={(ref) => { this.amountAvailable = ref; }}/> No </label><br />
                 <strong> Do you have anything else you would like to share with us? </strong> <input type="text" name="additionalNotes" placeholder="" ref={(ref) => { this.additionalNotes = ref; }}/><br />
               </div>
-                <button type='submit'> Submit </button>
+                <Button bsStyle='primary' type='submit'> Submit </Button>
             </form>
           </div>
         )
