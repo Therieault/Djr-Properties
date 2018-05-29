@@ -33,7 +33,6 @@ class EastStreet extends Component {
     <div>
       <h1 className="title">East Street</h1>
       <div>
-        <Link to='/apply'> Apply to East Street today! </Link>
         <Route exact path='/apply' />
       </div>
       <p>  Welcome to East Street! This three family building is located conveniently close to express and local bus lines! These apartments boast brand new kitchen amenities, and hardwood floors. </p>
@@ -50,6 +49,7 @@ class EastStreet extends Component {
             <li>Electricity not included in rent</li>
             <li> Water included with rent </li>
           </ul>
+          <Link to='/apply'> Apply to East Street today! </Link>
         </div>
         <span className="building-additionals">
           <div className='image-gallery-container'>

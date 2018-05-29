@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Route, Link} from 'react-router-dom';
 import Button from 'react-bootstrap/lib/Button'
 
 class ContactUs extends Component {
@@ -38,9 +37,9 @@ class ContactUs extends Component {
                   <form onSubmit={this.handleSubmit}>
                     <p> Questions? Comments? Concerns? Leave us a note  </p>
                     <p>and we will get back to you ASAP. </p>
-                    <strong> Name: </strong> <input type="text" name="name" placeholder="" ref={(ref) => { this.name = ref; }} required/> <br />
-                    <strong> Email: </strong> <input type="email" name="email" placeholder="" ref={(ref) => { this.email = ref; }} required/> <br />
-                    <strong> Note: </strong> <textarea className="comment-input" type="text" name="comment" ref={(ref) => { this.comment = ref; }}/> <br />
+                    <strong> Name: </strong>  <br /> <input type="text" name="name" placeholder="" ref={(ref) => { this.name = ref; }} required/> <br />
+                    <strong> Email: </strong> <br /> <input type="email" name="email" placeholder="" ref={(ref) => { this.email = ref; }} required/> <br />
+                    <strong> Note: </strong> <br /> <textarea className="comment-input" type="text" name="comment" ref={(ref) => { this.comment = ref; }}/> <br />
                     <Button bsStyle='primary' type='submit'> Submit </Button>
                 </form>
               </div>

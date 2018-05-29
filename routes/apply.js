@@ -227,7 +227,7 @@ router.post('/application', function(req,res) {
         secure: false, // true for 465, false for other ports
         auth: {
             user: 'djr.properties@yahoo.com', // generated ethereal user
-            pass: // generated ethereal password
+            pass: 'Bristolbristol2016' // generated ethereal password
         },
         tls: {
           rejectUnauthorized:false

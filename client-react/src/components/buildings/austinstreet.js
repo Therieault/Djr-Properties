@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
 import {Route, Link} from 'react-router-dom';
+import Button from 'react-bootstrap/lib/Button'
 
 class AustinStreet extends Component {
   constructor(props) {
@@ -30,9 +31,7 @@ class AustinStreet extends Component {
     return (
       <div>
         <h1 className="title">Austin Street</h1>
-        <p>  Welcome to Austin Street!</p>
         <div>
-        <Link to='/apply'> Apply to Austin Street today! </Link>
         <Route exact path='/apply' />
         </div>
           <div className='building-description'>
@@ -49,6 +48,7 @@ class AustinStreet extends Component {
               <li>Gas not included in rent</li>
               <li>Electricity not included in rent</li>
             </ul>
+            <Link to='/apply'> Apply to Austin Street today! </Link> 
           </div>
           <span className='building-additionals'>
             <div className='image-gallery-container'>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import Home from './components/home';
 import Apartments from './components/apartments.js';
 import AustinStreet from './components/buildings/austinstreet';
@@ -15,7 +15,6 @@ import NavItem from 'react-bootstrap/lib/NavItem';
 import Nav from 'react-bootstrap/lib/Nav';
 import MenuItem from'react-bootstrap/lib/MenuItem';
 import Application from './components/application';
-import ShowApartment from './components/apartment-show'
 
 
 const Navigation = () => {
@@ -23,7 +22,7 @@ const Navigation = () => {
       <div>
         <Navbar inverse collapseOnSelect>
           <NavbarHeader>
-            <NavbarBrand> DJR Properties, LLC </NavbarBrand>
+            <NavbarBrand> <i className="fas fa-home"></i>DJR Properties, LLC </NavbarBrand>
             <Navbar.Toggle />
           </NavbarHeader>
         <Navbar.Collapse>
@@ -49,7 +48,6 @@ const Navigation = () => {
         <Route exact path='/apply' component={Apply} />
         <Route exact path='/contact' component={ContactUs} />
         <Route exact path='/application' component={Application} />
-        <Route path='/apartments/:id' component={ShowApartment} />
       </div>
     )
 }
